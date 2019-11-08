@@ -1,1 +1,36 @@
 // Mixins Here
+
+.flex(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-nav(){
+    border-bottom:3px solid @nav-border;
+}
+
+// Parametric Mixins
+
+.button(@bg-color,@width){
+    background-color: @bg-color;
+    width:@width;
+    padding:4%;
+    cursor: pointer;
+    border:none;
+    border-radius:10px;
+    color:@porcelain;
+    font-size: 1.8rem;
+    font-weight:bold;
+
+    &:hover{
+        background-color: @porcelain;
+        color: @bg-color;
+
+    }
+}
+
+//Escaping
+
+@phone: ~"(max-width: 500px)";
